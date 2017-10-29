@@ -17,6 +17,7 @@ public class SongsAdapter extends RecyclerView.Adapter<SongsAdapter.MyViewHolder
     private List<AudioModel> songsList;
     private MediaPlayer mPlayer;
     private Context context;
+    private String userName;
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public TextView title;
@@ -28,11 +29,15 @@ public class SongsAdapter extends RecyclerView.Adapter<SongsAdapter.MyViewHolder
         }
     }
 
+    public void userName(String userName) {
+        this.userName = userName;
+    }
 
-    public SongsAdapter(List<AudioModel> moviesList, Context context) {
+    public SongsAdapter(List<AudioModel> moviesList, Context context,String userName) {
         mPlayer = new MediaPlayer();
         this.songsList = moviesList;
         this.context = context;
+        this.userName = userName;
     }
 
     @Override
@@ -47,10 +52,10 @@ public class SongsAdapter extends RecyclerView.Adapter<SongsAdapter.MyViewHolder
     public void onBindViewHolder(MyViewHolder holder, int position) {
         AudioModel songMap = songsList.get(position);
         holder.title.setText(songMap.getaArtist());
-        setClick(holder,songMap.getaAlbum());
+        setClick(holder,songMap.getaAlbum(),songMap.getaArtist());
     }
 
-    private void setClick(MyViewHolder holder,String path) {
+    private void setClick(MyViewHolder holder,String path,final String name) {
         final String mPath = path;
         holder.title.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +63,9 @@ public class SongsAdapter extends RecyclerView.Adapter<SongsAdapter.MyViewHolder
                 mPlayer = new MediaPlayer();
                 try { mPlayer.setDataSource(mPath); } catch (Exception e) {}
                 try { mPlayer.prepare(); } catch (Exception e) {}
+                Long timestamp = System.currentTimeMillis();
                 mPlayer.start();
+                new SyncInit().send(timestamp,name,userName,context);
             }
         });
     }

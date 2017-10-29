@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "325725759085",
+    "firebase_url": "https://syncit-33de3.firebaseio.com",
+    "project_id": "syncit-33de3",
+    "storage_bucket": "syncit-33de3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:325725759085:android:46e16520fd2ad513",
+        "android_client_info": {
+          "package_name": "com.example.hacks17"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "325725759085-105fm7qcahv4e1q6kflc0ovvrqhnu016.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hacks17",
+            "certificate_hash": "8d63d0b03c05b12520d561eebed3802253aa528b"
+          }
+        },
+        {
+          "client_id": "325725759085-l38tampr1lqrhnm388887ajtuefbh58m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBK38x-3ObsET5sCY75divr8v71OIaac8A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "325725759085-l38tampr1lqrhnm388887ajtuefbh58m.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
